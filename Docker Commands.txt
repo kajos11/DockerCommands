@@ -1,0 +1,23 @@
+Docker Useful Commands:
+-----------------------
+
+
+1. List Containers: docker ps -a
+
+2. Remove a container: docker rm container/name
+
+3. List Images: docker images
+
+4. Remove image: docker rmi nginx
+
+5. Run Container Attach/Detach: 
+
+	Detach:
+	
+	docker run -d {imagename}
+    -d runs in detached mode
+	
+	Attach:
+	
+	docker attach {imagename}
+   
