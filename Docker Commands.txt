@@ -21,13 +21,13 @@ Docker Useful Commands:
 	
 	docker attach {imagename}
    
-6. Run -tag
+6. Run -tag:
 
 	docker run redis:4.0
 	
 	:{version} to specify which version to install
 	
-7. Run -Stdin
+7. Run -Stdin:
 
 	docker run -i {name}
 	
@@ -38,17 +38,26 @@ Docker Useful Commands:
 	-t for terminal attach
 	-i for interactive mode
 	
-8. Run -Port mapping
+8. Run -Port mapping:
 
 	docker run -p 80:5000
 	
 	-p to port the docker host port 80 to docker container port 5000
 	
-9. Run -Volume mapping
+9. Run -Volume mapping:
 
 	docker run -v /opt/datadir:/var/lib/mysql mysql
 	
 	-v to map the directory outside the container on the docker host to the directory inside the container.
 
+10. Inspect Container:
 
+	docker inspect {container/name}
 	
+	To find details of the container, it is represented in json format
+	
+11. Container Logs:
+
+	docker logs {container/name}
+	
+	To find the logs of the container.
