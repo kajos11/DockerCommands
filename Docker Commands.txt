@@ -125,3 +125,22 @@ DOCKER NETWORK:
 
 	docker run --network=wp-mysql-network -e DB_Host=mysql-db -e DB_Password=db_pass123 -p 38080:8080 --name webapp --link mysql-db:mysql-db -d kodekloud/simple-webapp-mysql
 	
+Docker Storage:
+
+23. Volume Mount:
+
+	OLD SYNTAX:
+	
+	docker volume create data_volume
+
+	docker run -v data_volume:/var/lib/mysql mysql
+	
+	Bind mount:
+	
+	docker run -v /data/mysql:/var/lib/mysql mysql
+	
+	NEW SYNTAX:
+	
+	docker run --mount type=bind, source=/data/mysql,target=/var/lib/mysql mysql
+	
+	
