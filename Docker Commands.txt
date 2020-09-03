@@ -38,6 +38,11 @@ Docker Useful Commands:
 	-t for terminal attach
 	-i for interactive mode
 	
+	Docker run with name:
+	docker run --name {name} {container/name}
+	
+	
+	
 8. Run -Port mapping:
 
 	docker run -p 80:5000
@@ -61,3 +66,38 @@ Docker Useful Commands:
 	docker logs {container/name}
 	
 	To find the logs of the container.
+	
+12. Configure Environment variables:
+
+	 docker run -e APP_COLOR=red {container/name}	
+	 
+	 To pass env variable to ENTRYPOINT
+	 
+13. Docker Images:
+	
+	Docker image is create for ease of shipping.
+	It consists of a DockerFile
+	DockerFile is a text file written in specific format that docker can understand.
+	It is in an Instruction and Argument format.
+	
+	Every Instruction is written in capital letters: FROM, RUN, COPY, ENTRYPOINT
+	
+14. Failure:
+	All the layers built are cached by Docker, on making changes to the docker file, the build continues from the previosly cached layer to avoid time delay in running all the layers again.
+
+15. Docker CMD vs ENTRYPOINT
+
+	Unline VM containers are not meant to host an OS, containers are meant to run a specific task or process.
+	Such as host an instance of a webserver or application server or a database or simply carry out a computation or analysis.
+	Once the task is complete the container exits.
+	Container exists as long as the process inside it is alive.
+	If the WebServer inside the container is stopped or crashes the container exits.
+	
+	Override Entrypoint:
+	docker run --entrypoint ep2.0 {container/name} {args}
+	
+16: Docker Pull Library
+	
+	docker pull {Library:tag}
+	
+	
